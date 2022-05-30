@@ -8,7 +8,6 @@ char * itoa(int num) {
     highest_power_of_ten_less_than_num++;
   }
   highest_power_of_ten_less_than_num--;
-  printf("highest power of ten less than num: %d\n",highest_power_of_ten_less_than_num);
   char * ans = calloc(highest_power_of_ten_less_than_num+1,1);
 
   int power = highest_power_of_ten_less_than_num;
@@ -28,16 +27,13 @@ char * itoa(int num) {
       multiplier--;
       highest -= pow(10,power);
     }
-
-    printf("Highest: %d\n",highest);
-    
+ 
     ans[i] = (char) multiplier + 48;
 
     num -= highest;
     
     power--;
     i++;
-    printf("ans: %s\n",ans);
   }
   ans[i] = '\0';
 
