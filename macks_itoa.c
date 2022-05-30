@@ -3,6 +3,10 @@
 #include <stdio.h>
 
 char * itoa(int num) {
+  if (num == 0) {
+    return "0";
+  }
+
   int sign = 0;
   if (num >= 0) {
     sign = 1;
@@ -59,5 +63,6 @@ int main() {
   printf("My itoa returns %s for 100035\n",itoa(100035));
   printf("My itoa returns %s for -8\n",itoa(-8));
   printf("My itoa returns %s for -120\n",itoa(-120));
+  printf("My itoa returns %s for 0\n",itoa(0));
   return 0;
 }
